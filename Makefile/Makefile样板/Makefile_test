@@ -1,0 +1,55 @@
+INCLUDES = -I../net/protocol -I../net/reactor -I../util/include -I../ -I../../libhk/include  -I../../libevent/include 
+		
+##### Change the following for your environment: 
+CROSS_COMPILE =
+C_COMPILER =		$(CROSS_COMPILE)gcc
+
+COMPILE_OPTS =		$(INCLUDES)  -fpermissive 
+C_FLAGS =		$(COMPILE_OPTS)  #-g
+
+CPLUSPLUS_COMPILER =	$(CROSS_COMPILE)g++ 
+CPLUSPLUS_FLAGS =	$(COMPILE_OPTS) -Wall  #-DBSD=1 -g -fPIC
+
+LINK  =	 $(CROSS_COMPILE)g++  
+
+##### End of variables to change
+SOURCES =  $(wildcard *.c) 
+OBJFILES = $(SOURCES:%.c=obj/test_%.o)
+
+.PHONY :clean install prepare all
+TARGET = $(SOURCES:%.c=test_%)
+all : prepare $(TARGET) 
+
+
+#change .cpp files  to .o files
+
+
+#$@--目标文件，$^--所有的依赖文件，$<--第一个依赖文件。
+obj/test_%.o:%.c  
+	@echo -e CC $<
+	@$(CPLUSPLUS_COMPILER)  $(CPLUSPLUS_FLAGS) -c -o $@ $< 
+
+LIBPATH = -L../../libhk/lib  -L../../libevent/lib
+LIBS =  ../net/lib/libnet.a  ../util/lib/libutil.a -levent -lpthread -lhcnetsdk  -lhpr  
+RUNLIB = -Wl,-rpath=/home/work/wwp/netCtrl_HK/trunk/server/libhk/lib
+ALLLIBS = $(RUNLIB) $(LIBPATH) $(LIBS) 
+
+test_%:obj/test_%.o
+	@echo "linking $(TARGET) from ..."
+	$(LINK) -o $@  $^  $(ALLLIBS)  
+	
+
+	
+prepare:
+	@echo "preparing..."
+	@if ! [ -d obj ]; then mkdir obj; fi;
+	@export LD_LIBRARY_PATH=/home/work/wwp/netCtrl_HK/trunk/server/libhk/lib
+
+clean:
+	-rm -rf *.o obj/*.o $(TARGET) *~ 
+install:
+	install $(TARGET) $(INSTALL_DIR)
+	
+
+
+##### Any additional, platform-specific rules come here:
