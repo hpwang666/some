@@ -1,0 +1,45 @@
+##### Change the following for your environment: 
+CROSS_COMPILE =		/opt/mv_pro_5.0.0/montavista/pro/devkit/arm/v5t_le/bin/arm_v5t_le-
+COMPILE_OPTS =	 -O2 -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64
+C =			c
+C_COMPILER =		$(CROSS_COMPILE)g++
+C_FLAGS =		$(COMPILE_OPTS) -c
+CPP =			cpp
+CPLUSPLUS_COMPILER =	$(CROSS_COMPILE)g++ -c
+CPLUSPLUS_FLAGS =	$(COMPILE_OPTS) -Wall -DBSD=1
+OBJ =			o
+LINK =			$(CROSS_COMPILE)g++ -o 
+LINK_OPTS =	-lpthread	
+CONSOLE_LINK_OPTS =	$(LINK_OPTS)
+LIBRARY_LINK =		$(CROSS_COMPILE)ar cr 
+LIBRARY_LINK_OPTS =	$(LINK_OPTS)
+LIB_SUFFIX =			a
+
+##### End of variables to change
+
+MEDIA_SERVER = libRTSPStream.a
+
+ALL = $(MEDIA_SERVER)
+all: $(ALL)
+
+SOURCES =  RTSPStream.cpp $(wildcard CircularQueue/*.cpp) 
+HEADERS = $(wildcard *.h) $(wildcard CircularQueue/*.h)  
+
+#change .cpp files  to .o files
+OBJFILES = $(SOURCES:%.cpp=%.o)
+
+$(OBJFILES):	%.o:%.cpp   $(HEADERS) 
+	@echo Compiling $@ from $<..
+	$(C_COMPILER)  $(C_FLAGS) -o $@ $<
+
+
+$(MEDIA_SERVER):	$(OBJFILES) 
+	@echo " linking sos from ........ "
+#	$(LINK)$@ $(CONSOLE_LINK_OPTS) $(OBJFILES)
+	$(LIBRARY_LINK)$@  $(OBJFILES)
+
+clean:
+	-rm -rf *.$(OBJ) $(ALL) *~ 
+
+
+##### Any additional, platform-specific rules come here:
