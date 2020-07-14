@@ -1,0 +1,46 @@
+#对子目录一起编译的例程
+
+include ../Makefile.pub
+
+DEFS =
+CFLAGS := -Wall -g $(DEFS) -I. 
+CFLAGS += -fPIC
+CFLAGS += -I$(CROSS_PATH)/libfcgi/include -I../logger -I..  -I$(CROSS_PATH)/libevent/include \
+			-I$(CROSS_PATH)/libjson_c/include
+CXXFLAGS:=$(CFLAGS)
+CCFLAGS:=$(CFLAGS)
+LIBPATH := -L../logger/lib  -L$(CROSS_PATH)/libevent/lib -L$(CROSS_PATH)/libjson_c/lib
+LIBS := $(CROSS_PATH)/libfcgi/lib/libfcgi.a  -ljson-c  -llogger -lpthread -lstdc++
+
+
+
+
+##### End of variables to change
+.PHONY :prepare all clean install
+
+TARGET = fcgi_bin
+ALL = $(TARGET)
+all: prepare $(ALL)
+
+SOURCES :=  $(wildcard *.c wildcard ptz/*.c) 
+#change .cpp files  to .o files
+OBJFILES =  $(SOURCES:%.c=obj/%.o)
+
+
+obj/%.o:%.c  $(INCLUDES)
+	$(COMPILE_CC)
+
+	
+$(TARGET):$(OBJFILES)
+	$(LINK_CC)
+prepare:
+	@if ! [ -d obj ]; then mkdir obj; fi;
+	@if ! [ -d obj/ptz ]; then mkdir obj/ptz; fi;
+	@echo "preparing..."
+
+clean:
+	-rm -rf *.o $(ALL) *~ obj/
+install:
+	install $(TARGET) $(INSTALL_DIR)
+
+##### Any additional, platform-specific rules come here:
