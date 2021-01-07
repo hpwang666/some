@@ -15,6 +15,12 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 在  bin目录下 ls -l sh 发现指向dash 用以下命令关闭，令其指向bash
 sudo dpkg-reconfigure dash
 
+一般可以将/etc/apt/sources.list 里面的下载地址更换，速度快得多
+：% s/old/new/g用new替换整篇中出现的old
+
+archive.ubuntu.com
+mirrors.aliyun.com
+
 
 
 
