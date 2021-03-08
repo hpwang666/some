@@ -1,25 +1,26 @@
-ËÑË÷
+æœç´¢
 apt-cache search PostgreSQL
 
-# É¾³ıÈí¼ş¼°ÆäÅäÖÃÎÄ¼ş
+# åˆ é™¤è½¯ä»¶åŠå…¶é…ç½®æ–‡ä»¶
 apt-get --purge remove <package>
-# É¾³ıÃ»ÓÃµÄÒÀÀµ°ü
+# åˆ é™¤æ²¡ç”¨çš„ä¾èµ–åŒ…
 apt-get autoremove <package>
-# ´ËÊ±dpkgµÄÁĞ±íÖĞÓĞ¡°rc¡±×´Ì¬µÄÈí¼ş°ü£¬¿ÉÒÔÖ´ĞĞÈçÏÂÃüÁî×ö×îºóÇåÀí£º
+# æ­¤æ—¶dpkgçš„åˆ—è¡¨ä¸­æœ‰â€œrcâ€çŠ¶æ€çš„è½¯ä»¶åŒ…ï¼Œå¯ä»¥æ‰§è¡Œå¦‚ä¸‹å‘½ä»¤åšæœ€åæ¸…ç†ï¼š
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 
 
 
 
-¾­³£»á³öÏÖ²»ÄÜÔËĞĞsh½Å±¾£¬Òò±ØĞëÊ¹ÓÃbashÃüÁî£¬ÄÇÊÇÒòÎªÄ¬ÈÏµÄÊÇdash
-ÔÚ  binÄ¿Â¼ÏÂ ls -l sh ·¢ÏÖÖ¸Ïòdash ÓÃÒÔÏÂÃüÁî¹Ø±Õ£¬ÁîÆäÖ¸Ïòbash
+ç»å¸¸ä¼šå‡ºç°ä¸èƒ½è¿è¡Œshè„šæœ¬ï¼Œå› å¿…é¡»ä½¿ç”¨bashå‘½ä»¤ï¼Œé‚£æ˜¯å› ä¸ºé»˜è®¤çš„æ˜¯dash
+åœ¨  binç›®å½•ä¸‹ ls -l sh å‘ç°æŒ‡å‘dash ç”¨ä»¥ä¸‹å‘½ä»¤å…³é—­ï¼Œä»¤å…¶æŒ‡å‘bash
 sudo dpkg-reconfigure dash
 
-Ò»°ã¿ÉÒÔ½«/etc/apt/sources.list ÀïÃæµÄÏÂÔØµØÖ·¸ü»»£¬ËÙ¶È¿ìµÃ¶à
-£º% s/old/new/gÓÃnewÌæ»»ÕûÆªÖĞ³öÏÖµÄold
+ä¸€èˆ¬å¯ä»¥å°†/etc/apt/sources.list é‡Œé¢çš„ä¸‹è½½åœ°å€æ›´æ¢ï¼Œé€Ÿåº¦å¿«å¾—å¤š
+ï¼š% s/old/new/gç”¨newæ›¿æ¢æ•´ç¯‡ä¸­å‡ºç°çš„old
 
-archive.ubuntu.com
-mirrors.aliyun.com
+% s/archive.ubuntu.com/mirrors.aliyun.com/g
+
+
 
 
 
