@@ -1,3 +1,3 @@
 find . -name ".svn"| xargs rm -rf
 
-�ҵ��ļ���Ȼ��ɾ����xargs���ݲ���
+找到文件夹然后删除，xargs传递参数
