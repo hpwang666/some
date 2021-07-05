@@ -20,6 +20,9 @@ sudo dpkg-reconfigure dash
 
 % s/archive.ubuntu.com/mirrors.aliyun.com/g
 
+清华大学镜像网站
+https://mirrors.tuna.tsinghua.edu.cn/
+% s/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g
 
 
 
