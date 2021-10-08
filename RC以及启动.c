@@ -12,4 +12,20 @@ S04rc.local -> ../init.d/rc.local
 进入  /etc/rc.local 就是自己的启动服务代码，由于使用了 #!/bin/sh -e 只要脚本有错误就会返回退出
 所以建议使用exec执行自己的脚本
 
-  
+
+ubuntu  18 以后的版本用systemd管理启动
+1.sudo vi /lib/systemd/system/rc.local.service
+
+[Install]
+WantedBy=multi-user.target
+Alias=rc-local.service
+
+
+sudo rm /etc/systemd/system/rc-local.service
+sudo systemctl enable rc.local.service
+sudo systemctl status rc-local.service //可以看到执行rc.local输出结果
+
+rc.local样式
+#!/bin/sh -e
+
+exit 0
