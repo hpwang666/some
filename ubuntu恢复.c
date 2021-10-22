@@ -27,3 +27,6 @@ parted /dev/sda print
 
 最后再输入一次sudo grub-install /dev/sda，之后应该就没有问题了
 
+
+删除vmware tools 
+sudo vmware-uninstall-tools.pl
