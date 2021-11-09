@@ -27,6 +27,17 @@ parted /dev/sda print
 
 最后再输入一次sudo grub-install /dev/sda，之后应该就没有问题了
 
+##########
+卸载vmware tool 
+vmware-uninstall-tools.pl
 
-删除vmware tools 
-sudo vmware-uninstall-tools.pl
+
+####
+ubuntu ssh不断开
+vi /etc/ssh/sshd_config
+	ClientAliveInterval 30
+	ClientAliveCountMax 6
+
+
+
+
