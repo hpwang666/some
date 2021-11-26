@@ -26,6 +26,19 @@ https://mirrors.tuna.tsinghua.edu.cn/
 
 
 
+安装apt-cache以外的包
+
+sudo add-apt-repository ppa:git-core/ppa # 向 PPA 中添加 git 的软件源
+sudo apt-get update
+sudo apt-get install git
+
+
+添加PPA不成功可以执行以下操作
+我们先重装一遍CA证书：
+sudo apt-get install --reinstall ca-certificates
+如果还不行，我们就绕过代理，加一个"-E"：
+sudo -E add-apt-repository --update ppa:ubuntu-toolchain-r/test
+
 
 
 
