@@ -8,6 +8,11 @@ zt zz zb 分别是让光标显示在屏幕的上  中  底部
 :Vexplore .     " 在垂直分割窗口中浏览该目录
 打开目录后Enter进入下一层，-返回上一层，R重命名，D删除。
 
+ctags 用法
+	安装ctags 后 对目录执行ctags -R . 当前目录  子目录文件都生成tags文件
+	生成tags文件后 即可进行函数跳转
+	Ctrl + ]  跳转到函数的定义
+	Ctrl + t  回跳
 
 bn bp 上下操作
 b name 或者是序号b5 直接跳转
