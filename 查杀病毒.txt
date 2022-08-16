@@ -1,0 +1,10 @@
+netstat -antlp | 45.9
+找出所有的可疑进程，也可以通过CPU高占有率来找
+
+每个进程找到文件位置
+ls -l /proc/3345/exe
+
+删除文件
+
+删除定时文件 
+crontab -l -u work
