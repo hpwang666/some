@@ -16,4 +16,5 @@ gpasswd -d user group
 但是这个时候需要保证 group 不是 user 的主组。
 
 
- 
+可以一起更改文件夹的用户 用户组
+ chown -R user:group <dir>

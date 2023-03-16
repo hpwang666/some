@@ -1,51 +1,51 @@
 fdisk -l /dev/sda
-²é¿´sdaÏÂÃæµÄ´ÅÅÌ·ÖÇø
+æŸ¥çœ‹sdaä¸‹é¢çš„ç£ç›˜åˆ†åŒº
 
-fdisk  /dev/sda  ¿ªÊ¼½øÐÐ·ÖÇøµÄÉ¾³ýºÍ½¨Á¢£¬¾ßÌå¿ÉÒÔÊäÈë'm'²é¿´ÃüÁî°ïÖú
-'p'²ú¿´µ±Ç°·ÖÇøÐÅÏ¢
-ÐÞ¸ÄÍæºó'w'½øÐÐÐÞ¸Ä±£´æ
+fdisk  /dev/sda  å¼€å§‹è¿›è¡Œåˆ†åŒºçš„åˆ é™¤å’Œå»ºç«‹ï¼Œå…·ä½“å¯ä»¥è¾“å…¥'m'æŸ¥çœ‹å‘½ä»¤å¸®åŠ©
+'p'äº§çœ‹å½“å‰åˆ†åŒºä¿¡æ¯
+ä¿®æ”¹çŽ©åŽ'w'è¿›è¡Œä¿®æ”¹ä¿å­˜
 
-·ÖÇø¸ÄºÃÖ®ºó½øÐÐÎÄ´ÅÅÌ·ÖÇø¸ñÊ½»¯
+åˆ†åŒºæ”¹å¥½ä¹‹åŽè¿›è¡Œæ–‡ç£ç›˜åˆ†åŒºæ ¼å¼åŒ–
  mkfs -t ext4 /dev/sda1
  
- ÉèÖÃ¿ª»ú×Ô¶¯¹ÒÈ¡Ä¿Â¼ /etc/fstab
+ è®¾ç½®å¼€æœºè‡ªåŠ¨æŒ‚å–ç›®å½• /etc/fstab
 	 /dev/sda3              /home         ext4      defaults  0      2
-	 <dump>  dump ¹¤¾ßÍ¨¹ýËü¾ö¶¨ºÎÊ±×÷±¸·Ý. dump »á¼ì²éÆäÄÚÈÝ£¬²¢ÓÃÊý×ÖÀ´¾ö¶¨ÊÇ·ñ¶ÔÕâ¸öÎÄ¼þÏµÍ³½øÐÐ±¸·Ý¡£ ÔÊÐíµÄÊý×ÖÊÇ 0 ºÍ 1 
-	 ¡£0 ±íÊ¾ºöÂÔ£¬ 1 Ôò½øÐÐ±¸·Ý¡£
-	 ´ó²¿·ÖµÄÓÃ»§ÊÇÃ»ÓÐ°²×° dump µÄ £¬¶ÔËûÃÇ¶øÑÔ <dump> Ó¦ÉèÎª 0¡£
+	 <dump>  dump å·¥å…·é€šè¿‡å®ƒå†³å®šä½•æ—¶ä½œå¤‡ä»½. dump ä¼šæ£€æŸ¥å…¶å†…å®¹ï¼Œå¹¶ç”¨æ•°å­—æ¥å†³å®šæ˜¯å¦å¯¹è¿™ä¸ªæ–‡ä»¶ç³»ç»Ÿè¿›è¡Œå¤‡ä»½ã€‚ å…è®¸çš„æ•°å­—æ˜¯ 0 å’Œ 1 
+	 ã€‚0 è¡¨ç¤ºå¿½ç•¥ï¼Œ 1 åˆ™è¿›è¡Œå¤‡ä»½ã€‚
+	 å¤§éƒ¨åˆ†çš„ç”¨æˆ·æ˜¯æ²¡æœ‰å®‰è£… dump çš„ ï¼Œå¯¹ä»–ä»¬è€Œè¨€ <dump> åº”è®¾ä¸º 0ã€‚
 
-	<pass> fsck ¶ÁÈ¡ <pass> µÄÊýÖµÀ´¾ö¶¨ÐèÒª¼ì²éµÄÎÄ¼þÏµÍ³µÄ¼ì²éË³Ðò¡£ÔÊÐíµÄÊý×ÖÊÇ0, 1, ºÍ2¡£ 
-	¸ùÄ¿Â¼Ó¦µ±»ñµÃ×î¸ßµÄÓÅÏÈÈ¨ 1, ÆäËüËùÓÐÐèÒª±»¼ì²éµÄÉè±¸ÉèÖÃÎª 2. 0 ±íÊ¾Éè±¸²»»á±» fsck Ëù¼ì²é¡£
+	<pass> fsck è¯»å– <pass> çš„æ•°å€¼æ¥å†³å®šéœ€è¦æ£€æŸ¥çš„æ–‡ä»¶ç³»ç»Ÿçš„æ£€æŸ¥é¡ºåºã€‚å…è®¸çš„æ•°å­—æ˜¯0, 1, å’Œ2ã€‚ 
+	æ ¹ç›®å½•åº”å½“èŽ·å¾—æœ€é«˜çš„ä¼˜å…ˆæƒ 1, å…¶å®ƒæ‰€æœ‰éœ€è¦è¢«æ£€æŸ¥çš„è®¾å¤‡è®¾ç½®ä¸º 2. 0 è¡¨ç¤ºè®¾å¤‡ä¸ä¼šè¢« fsck æ‰€æ£€æŸ¥ã€‚
  
- ±¸·Ý£º 
-dd if=/dev/hdx of=/dev/hdy bs=4096 #½«±¾µØµÄ/dev/hdxÕûÅÌ±¸·Ýµ½/dev/hdy 
-dd if=/dev/hdx of=/path/to/image bs=4096 #½«/dev/hdxÈ«ÅÌÊý¾Ý±¸·Ýµ½Ö¸¶¨Â·¾¶µÄimageÎÄ¼þ 
+ å¤‡ä»½ï¼š 
+dd if=/dev/hdx of=/dev/hdy bs=4096 #å°†æœ¬åœ°çš„/dev/hdxæ•´ç›˜å¤‡ä»½åˆ°/dev/hdy 
+dd if=/dev/hdx of=/path/to/image bs=4096 #å°†/dev/hdxå…¨ç›˜æ•°æ®å¤‡ä»½åˆ°æŒ‡å®šè·¯å¾„çš„imageæ–‡ä»¶ 
 dd if=/dev/hdx | gzip >/path/to/image.gz 
-#±¸·Ý/dev/hdxÈ«ÅÌÊý¾Ý£¬²¢ÀûÓÃgzip¹¤¾ß½øÐÐÑ¹Ëõ£¬±£´æµ½Ö¸¶¨Â·¾¶
+#å¤‡ä»½/dev/hdxå…¨ç›˜æ•°æ®ï¼Œå¹¶åˆ©ç”¨gzipå·¥å…·è¿›è¡ŒåŽ‹ç¼©ï¼Œä¿å­˜åˆ°æŒ‡å®šè·¯å¾„
 
-ÍøÂç±¸·Ý
-dd if=/dev/hda bs=16065b | netcat < targethost-IP > 1234 #ÔÚÔ´Ö÷»úÉÏÖ´ÐÐ´ËÃüÁî±¸·Ý/dev/hda
+ç½‘ç»œå¤‡ä»½
+dd if=/dev/hda bs=16065b | netcat < targethost-IP > 1234 #åœ¨æºä¸»æœºä¸Šæ‰§è¡Œæ­¤å‘½ä»¤å¤‡ä»½/dev/hda
 
-netcat -l -p 1234 | dd of=/dev/hdc bs=16065b #ÔÚÄ¿µÄÖ÷»úÉÏÖ´ÐÐ´ËÃüÁîÀ´½ÓÊÕÊý¾Ý²¢Ð´Èë/dev/hdc
+netcat -l -p 1234 | dd of=/dev/hdc bs=16065b #åœ¨ç›®çš„ä¸»æœºä¸Šæ‰§è¡Œæ­¤å‘½ä»¤æ¥æŽ¥æ”¶æ•°æ®å¹¶å†™å…¥/dev/hdc
 
 
 
-ÀûÓÃLVM½øÐÐ¶¯Ì¬»®·Ö·ÖÇø´óÐ¡
-ËµÃ÷£ºËùÓÐ¾í×é¶¼ÊÇÔÚÎïÀí¾í(/dev/sda1)ÉÏÃæÐéÄâ³öÀ´µÄ.¾í×é¿ÉÒÔÔö¼Ó É¾³ýÎïÀí¾í£¬È»ºóÂß¼­¾íÓÖÊÇÔÚ¾í×éÉÏ·ÖÅäµÄ£¬²¢×îÖÕ¹ÒÔØÔÚ¾ßÌåµÄÄ¿Â¼ÏÂ
+åˆ©ç”¨LVMè¿›è¡ŒåŠ¨æ€åˆ’åˆ†åˆ†åŒºå¤§å°
+è¯´æ˜Žï¼šæ‰€æœ‰å·ç»„éƒ½æ˜¯åœ¨ç‰©ç†å·(/dev/sda1)ä¸Šé¢è™šæ‹Ÿå‡ºæ¥çš„.å·ç»„å¯ä»¥å¢žåŠ  åˆ é™¤ç‰©ç†å·ï¼Œç„¶åŽé€»è¾‘å·åˆæ˜¯åœ¨å·ç»„ä¸Šåˆ†é…çš„ï¼Œå¹¶æœ€ç»ˆæŒ‚è½½åœ¨å…·ä½“çš„ç›®å½•ä¸‹
 
-1. ÔÚ×°»úµÄÊ±ºòÐèÒªÑ¡ÔñËùÓÐ´ÅÅÌ´óÐ¡+LVM £¬ÕâÊ±ºò»áÑ¡Ôñ¸ùÄ¿Â¼´óÐ¡£¬²»ÒªÊäÈë×î´óµÄµÄÈÝÁ¿£¬ÒÔºó¾Í²»ºÃÀ©Õ¹ÆäËûÈÝÁ¿
-2. ÏµÍ³×°ºÃºó£¬ÊäÈëpvdislay  ¿ÉÒÔ²é¿´ÎïÀí¾í¹ÒÔØÄÄ¸ö¾í×éÉÏÃæ¡£¾í×éÎªVG Name£º ubuntu-vg
-3. Í¨¹ývgdisplay  ¿ÉÒÔ²é¿´¾í×é»¹Ê£¶àÉÙ¿Õ¼ä
-4.  ÔÚ¾í×éÉÏÃæ´´½¨Âß¼­¾í£¬´óÐ¡Îª800G£¬Ãû³ÆÎªdata  
+1. åœ¨è£…æœºçš„æ—¶å€™éœ€è¦é€‰æ‹©æ‰€æœ‰ç£ç›˜å¤§å°+LVM ï¼Œè¿™æ—¶å€™ä¼šé€‰æ‹©æ ¹ç›®å½•å¤§å°ï¼Œä¸è¦è¾“å…¥æœ€å¤§çš„çš„å®¹é‡ï¼Œä»¥åŽå°±ä¸å¥½æ‰©å±•å…¶ä»–å®¹é‡
+2. ç³»ç»Ÿè£…å¥½åŽï¼Œè¾“å…¥pvdislay  å¯ä»¥æŸ¥çœ‹ç‰©ç†å·æŒ‚è½½å“ªä¸ªå·ç»„ä¸Šé¢ã€‚å·ç»„ä¸ºVG Nameï¼š ubuntu-vg
+3. é€šè¿‡vgdisplay  å¯ä»¥æŸ¥çœ‹å·ç»„è¿˜å‰©å¤šå°‘ç©ºé—´
+4.  åœ¨å·ç»„ä¸Šé¢åˆ›å»ºé€»è¾‘å·ï¼Œå¤§å°ä¸º800Gï¼Œåç§°ä¸ºdata  
 		 lvcreate -L 800G -n data  ubuntu-vg
 		 mkfs -t ext4 /dev/ubuntu-vg/data
-	ÀûÓÃlvscan ¿ÉÒÔ²é¿´Âß¼­¾í
+	åˆ©ç”¨lvscan å¯ä»¥æŸ¥çœ‹é€»è¾‘å·
 	
-5. ¿ª»ú×Ô¶¯¹ÒÔØ vi /etc/fstab Ä©ÐÐÌí¼Ó
+5. å¼€æœºè‡ªåŠ¨æŒ‚è½½ vi /etc/fstab æœ«è¡Œæ·»åŠ 
 
 	/dev/ubuntu-vg/data     /home/work   ext4       defaults        0    0
 	
-6. df -h ¿ÉÒÔ¿´µ½
+6. df -h å¯ä»¥çœ‹åˆ°
     /dev/mapper/ubuntu--vg-data  788G   69M  748G   1% /home/work
 	
 	
