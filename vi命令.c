@@ -51,6 +51,13 @@ bdelete==bd 删除缓冲区的文件
 	== 格式化本行
 	#= 格式化以下多少行 这个功能比较智能，蛮好用
 
+文件格式：
+	查看编码  :set fileencoding
+	更改编码  :set fileencoding=utf-8
+
+	查看文件属性  :set fileformate
+	更改文件属性  :set fileformate=unix
+
 可视模式：
 	v 字符选取
 	V 行选取
