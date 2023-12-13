@@ -39,7 +39,7 @@ bdelete==bd 删除缓冲区的文件
 替换
 　　:s/old/new用new替换行中首次出现的old
 　　: s/old/new/g 用new替换行中所有出现的old
-　　:#,# s/old/new/g用new替换从第＃行到第＃行中出现的old
+　　:#,#s/old/new/g用new替换从第＃行到第＃行中出现的old
 　　：% s/old/new/g用new替换整篇中出现的old
     : 1,$s/word1/word2/gc 
 　　如果替换的范围较大时，在所有的命令尾加一个c命令，强制每个替换需要用户进行确认，例如:s/old/new/c 或s/old/new/gc
@@ -56,8 +56,9 @@ bdelete==bd 删除缓冲区的文件
 	查看编码  :set fileencoding
 	更改编码  :set fileencoding=utf-8
 
-	查看文件属性  :set fileformate
-	更改文件属性  :set fileformate=unix
+	查看文件属性  :set fileformat
+	更改文件属性  :set fileformat=unix
+	简写 :set ff
 
 可视模式：
 	v 字符选取
