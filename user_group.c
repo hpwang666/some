@@ -18,3 +18,6 @@ gpasswd -d user group
 
 可以一起更改文件夹的用户 用户组
  chown -R user:group <dir>
+
+
+ ubuntu默认没有root密码，可以通过sudo passwd进行设置

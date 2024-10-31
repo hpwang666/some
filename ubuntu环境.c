@@ -38,6 +38,7 @@ vi /etc/ssh/sshd_config
 	ClientAliveInterval 30
 	ClientAliveCountMax 6
 
-
-
+####
+后台挂起运行程序
+ nohup ./frps -c ./frps.ini >/dev/null 2>&1 &
 

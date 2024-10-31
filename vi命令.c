@@ -43,6 +43,7 @@ bdelete==bd 删除缓冲区的文件
 　　：% s/old/new/g用new替换整篇中出现的old
     : 1,$s/word1/word2/gc 
 　　如果替换的范围较大时，在所有的命令尾加一个c命令，强制每个替换需要用户进行确认，例如:s/old/new/c 或s/old/new/gc
+    引号加反斜线  % s/"/\\"/g
 
 缩进：
 	>>
