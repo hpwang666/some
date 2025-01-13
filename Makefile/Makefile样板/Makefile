@@ -5,7 +5,8 @@ CROSS_COMPILE =
 C_COMPILER =		$(CROSS_COMPILE)gcc
 
 COMPILE_OPTS =		$(INCLUDES)    #-DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64
-C_FLAGS =		$(COMPILE_OPTS)  #-g
+C_FLAGS =		$(COMPILE_OPTS)  -DFUCK
+#-D可以把编译宏传进去
 
 # -ffunction-sections、-fdata-sections，在编译生成的.o目标文件中，会将每个函数或数据段，放在各种单独独立的section中；
 # 链接时候使用这个参数 -Wl,–gc-sections 就不会把不用的函数链接进执行文件

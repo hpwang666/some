@@ -31,6 +31,8 @@ parted /dev/sda print
 卸载vmware tool 
 vmware-uninstall-tools.pl
 
+#########
+ubuntu默认root密码是随机的  sudo passwd 可以设置root密码
 
 ####
 ubuntu ssh不断开
@@ -41,4 +43,9 @@ vi /etc/ssh/sshd_config
 ####
 后台挂起运行程序
  nohup ./frps -c ./frps.ini >/dev/null 2>&1 &
+
+
+####
+ 配置双网卡
+ifconfig eth0:1 10.10.152.7 netmask 255.255.255.0 up
 
