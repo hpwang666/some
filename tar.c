@@ -18,3 +18,6 @@ tar命令
 --exclude FILE：在压缩的过程中，不要将 FILE 打包！
 
 对于zip文件，打包文件 ，可以直接使用unzip 命令
+zip -r -0 allTest.zip alltest/
+	-r 递归处理子文件目录
+	-0 不压缩

@@ -35,6 +35,12 @@ vmware-uninstall-tools.pl
 ubuntu默认root密码是随机的  sudo passwd 可以设置root密码
 
 ####
+如果没有.ssh 文件夹，就运行  ssh localhost
+
+#### 免密连接
+将公钥id_rsa.pub 拷贝到authorized_keys(没有就要创建，权限600)，多个就需要换行
+
+####
 ubuntu ssh不断开
 vi /etc/ssh/sshd_config
 	ClientAliveInterval 30
